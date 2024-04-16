@@ -1,11 +1,18 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import HeaderComponent from './components/HeaderComponent.vue'
+import MainComponent from './components/MainComponent.vue'
+export default {
+  components: {
+    HeaderComponent,
+
+  }
+}
+
 </script>
 
 <template>
-  <div>
+  <HeaderComponent />
 
-  </div>
 
 </template>
 
