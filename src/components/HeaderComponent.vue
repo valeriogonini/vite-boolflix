@@ -1,7 +1,13 @@
 <template>
   <div>
-    <input type="text" placeholder="Inserisci titolo">
+    <input v-model="store.query" type="text" placeholder="Inserisci titolo">
     <button @click="funcionButton()">Invio</button>
+    <ul>
+      <li> {{ title }}</li>
+      <li>{{ originalTitle }}</li>
+      <li>{{ language }}</li>
+      <li>{{ vote }}</li>
+    </ul>
   </div>
 </template>
 
@@ -30,8 +36,7 @@ export default {
           }
 
         }).then((res) => {
-          for (let i = 0; i < 10; i++)
-
+          for (let i = 0; i < 15; i++) {
             this.title.push(res.data.results[i].title),
               this.originalTitle.push(res.data.results[i].original_title),
               this.language.push(res.data.results[i].original_language),
@@ -41,6 +46,9 @@ export default {
 
 
               console.log(this.title, this.originalTitle, this.language, this.vote);
+          }
+
+
         })
     }
   }
