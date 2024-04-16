@@ -11,7 +11,11 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      store: store
+      store: store,
+      title: [],
+      originalTitle: [],
+      language: [],
+      vote: [],
 
     }
   },
@@ -26,7 +30,17 @@ export default {
           }
 
         }).then((res) => {
-          console.log(res.data.results);
+          for (let i = 0; i < 10; i++)
+
+            this.title.push(res.data.results[i].title),
+              this.originalTitle.push(res.data.results[i].original_title),
+              this.language.push(res.data.results[i].original_language),
+              this.vote.push(res.data.results[i].vote_average),
+
+
+
+
+              console.log(this.title, this.originalTitle, this.language, this.vote);
         })
     }
   }
