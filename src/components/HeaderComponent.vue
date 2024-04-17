@@ -38,7 +38,9 @@ export default {
         }).then((res) => {
           const data = res.data
           const result = data.results
+
           for (let i = 0; i < result.length; i++) {
+            const img = result[i].poster_path
             const title = result[i].title
             const originalTitle = result[i].original_title
             const language = result[i].original_language
@@ -47,7 +49,8 @@ export default {
               title,
               originalTitle,
               language,
-              vote
+              vote,
+              img
             })
 
             // this.title.push(res.data.results[i].title),
@@ -78,6 +81,7 @@ export default {
           const dataSerie = res.data
           const resultSerie = dataSerie.results
           for (let j = 0; j < resultSerie.length; j++) {
+            const img = result[j].poster_path
             const titleSerie = resultSerie[j].name
             const originalTitleSerie = resultSerie[j].original_name
             const languageSerie = resultSerie[j].original_language
@@ -86,7 +90,8 @@ export default {
               titleSerie,
               originalTitleSerie,
               languageSerie,
-              voteSerie
+              voteSerie,
+              img
             })
 
 

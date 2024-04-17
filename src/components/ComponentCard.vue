@@ -3,7 +3,8 @@
         <li v-for=" (movie, i) in store.movies" :key="movie.id">
             <h1>{{ movie.title }}</h1>
             <p>{{ movie.originalTitle }}</p>
-            <p>{{ movie.language }}</p>
+            <img :src="`https://image.tmdb.org/t/p/w342/${movie.img}`" alt="">
+            <img class="w-nation" :src="`/img/${movie.language}.png`">
             <p>{{ movie.vote }}</p>
         </li>
 
@@ -12,7 +13,8 @@
         <li v-for=" (serie, j) in store.series" :key="serie.id">
             <h1>{{ serie.titleSerie }}</h1>
             <p>{{ serie.originalTitleSerie }}</p>
-            <p>{{ serie.languageSerie }}</p>
+            <img :src="`https://image.tmdb.org/t/p/w342/${serie.img}`" alt="">
+            <img class="w-nation" :src="`/img/${serie.languageSerie}.png`">
             <p>{{ serie.voteSerie }}</p>
         </li>
 
@@ -34,9 +36,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.en {
-    background-image: url(../../public/img/en.png);
-    background-size: cover;
-    width: 10px;
+.w-nation {
+    width: 20px;
 }
 </style>
